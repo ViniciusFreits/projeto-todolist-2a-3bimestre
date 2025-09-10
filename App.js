@@ -23,6 +23,8 @@ export default function App() {
     setTarefa("");
   };
 
+  const renderItem = ({ item }) => <View><Text>{item}</Text></View>
+
   //Já importei o Flashlis e agora tem que usar
 
   return (
@@ -42,7 +44,9 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <View>
-
+        <FlashList 
+        data={tarefas}
+        renderItem={renderItem}/>
       </View>
       <StatusBar style="auto" />
     </View>
@@ -69,5 +73,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
+  },
+  viewTarefas : {
+    flex: 1, 
+    width: "100%"
   },
 });
